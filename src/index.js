@@ -1,36 +1,25 @@
-import header from "./header"
-import createProject from "./createProject"
-import aside from "./aside"
+import {createProject} from "./createProject";
 
-const myHeader = header()
-const myAside = aside()
-const myProjects = []
+let myProjects = []
 
-myHeader.btnNewProject.addEventListener("click", ()=>{
-    let tempNamePrompt = prompt("my project name: ")
-    let project = createProject(tempNamePrompt) 
-    project.addObserver(myAside)
-    project.notifyObserver()
-    myProjects.push(project)
-    console.log(myProjects)
-})
+function setMyProjects(newValue) {
+    myProjects = newValue
+}
 
 
-// make two example projects
-const myProject1Test = createProject("Finish this ToDo List")
-myProject1Test.addObserver(myAside)
-myProject1Test.notifyObserver()
-myProjects.push(myProject1Test)
+// Probar manualmente que funcione createProject
+let myTestProject = createProject("hi")
+let myTestProject2 = createProject("hi2")
 
-const myProject2Test = createProject("MyHomeTasks")
-myProject2Test.addObserver(myAside)
-myProject2Test.notifyObserver()
-myProjects.push(myProject2Test)
-// end
+myProjects.push(myTestProject)
+myProjects.push(myTestProject2)
 
+myTestProject.addToDos("MyTestTodo", "SomeDesc", "dueDatePendiente", "someNote", "Urgent", false)
+myTestProject.removeToDos(myTestProject[0])
+myTestProject.removeProject()
 console.log(myProjects)
-console.log("Antes de Shift: " + myProjects)
-myProjects.shift()
-console.log("Despues de: " + myProjects)
 
-export {myProjects}
+// test manual para verificar sujeto/obs
+
+
+export {myProjects, setMyProjects}

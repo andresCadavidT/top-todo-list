@@ -2,6 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/aside.js":
+/*!**********************!*\
+  !*** ./src/aside.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   aside: () => (/* binding */ aside)
+/* harmony export */ });
+/* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
+
+
+console.log(_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects())
+
+function aside(){
+    return {
+        alert: function(){
+            console.log("Alert")
+            // myProjects.forEach((aProject)=>{myAsideArray.push(aProject)})
+        }
+    }
+}
+
+
+
+
+
+/***/ }),
+
 /***/ "./src/createProject.js":
 /*!******************************!*\
   !*** ./src/createProject.js ***!
@@ -10,36 +40,52 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createProject: () => (/* binding */ createProject)
+/* harmony export */   createProject: () => (/* binding */ createProject),
+/* harmony export */   projects: () => (/* binding */ projects)
 /* harmony export */ });
-function createProject(name){
+const projects = (function(){
+    const myProjects = [];
     return {
-        name, 
+        addProject: function(theProject){myProjects.push(theProject)},
+        getMyProjects: function(){return myProjects},
+        removeProject: function(projectToRemove){
+            let indexToRemove = myProjects.indexOf(projectToRemove)
+            myProjects.splice(indexToRemove, 1);
+        }
+    }
+})()
+
+function createProject(name){
+    return{
+        name,
         toDos: [],
+        removeToDos: function(toDoToRemove){
+            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
+        },
         addToDos: function(Title, description, dueDate, notes, priority, checkList = false){
             const newTodo = {Title, description, dueDate, notes, priority, checkList}
             this.toDos.push(newTodo)},
-        removeToDos: function(toDoToRemove){
-            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
-        }
     }
 }
 
-createProject.projectObservers = []
 
-createProject.addObserver = function(newOb){
-    projectObservers.push(newOb)
-}
 
-createProject.removeObserver = function(obToRem){
-    projectObservers = projectObservers.filter(ob=>ob!==obToRem)
-}
 
-createProject.notifyObservers = function(){
-    projectObservers.forEach((ob)=>{
-        ob.alert("some")
-    })
-}
+// createProject.projectObservers = []
+
+// createProject.addObserver = function(newOb){
+//     createProject.projectObservers.push(newOb)
+// }
+
+// createProject.removeObserver = function(obToRem){
+//     createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
+// }
+
+// createProject.notifyObservers = function(){
+//     createProject.projectObservers.forEach((ob)=>{
+//         ob.alert("some")
+//     })
+// }
 
 
 
@@ -113,38 +159,45 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   myProjects: () => (/* binding */ myProjects),
-/* harmony export */   removeProject: () => (/* binding */ removeProject)
-/* harmony export */ });
 /* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
+/* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
 
 
-let myProjects = []
 
-function removeProject(projectToRemove){
-    myProjects = myProjects.filter(aProject=>aProject !== projectToRemove)
-}
+
+// Test manual de creacion de varios Projects
+
+const myTestProject = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi")
+const myTestProject2 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi2")
+const myTestProject3 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi3")
+
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject)
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject2)
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject3)
+
+
+const newProject4 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("myNewProject4")
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(newProject4)
+
+console.log(_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects())
+
+
+
+// myTestProject.addToDos("MyTestTodo", "SomeDesc", "dueDatePendiente", "someNote", "Urgent", false)
+// myTestProject.removeToDos(myTestProject[0])
+
+
+
+
+// test manual para verificar sujeto/obs
+// const theAside = aside()
+
+// createProject.addObserver(theAside)
+// createProject.notifyObservers()
 
 
 
 // Probar manualmente que funcione createProject
-let myTestProject = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi")
-let myTestProject2 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi2")
-
-myProjects.push(myTestProject)
-myProjects.push(myTestProject2)
-
-myTestProject.addToDos("MyTestTodo", "SomeDesc", "dueDatePendiente", "someNote", "Urgent", false)
-myTestProject.removeToDos(myTestProject[0])
-console.log(myProjects)
-removeProject(myTestProject)
-console.log(myProjects)
-
-// test manual para verificar sujeto/obs
-
-
-
 })();
 
 /******/ })()

@@ -1,13 +1,7 @@
-import {myProjects, setMyProjects} from "./index"
-
 function createProject(name){
     return {
         name, 
         toDos: [],
-        removeProject: function(){
-            let test = myProjects.filter(aProject=>aProject !== this)
-            setMyProjects(test)
-        },
         addToDos: function(Title, description, dueDate, notes, priority, checkList = false){
             const newTodo = {Title, description, dueDate, notes, priority, checkList}
             this.toDos.push(newTodo)},

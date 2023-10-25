@@ -2,9 +2,10 @@ import {createProject} from "./createProject";
 
 let myProjects = []
 
-function setMyProjects(newValue) {
-    myProjects = newValue
+function removeProject(projectToRemove){
+    myProjects = myProjects.filter(aProject=>aProject !== projectToRemove)
 }
+
 
 
 // Probar manualmente que funcione createProject
@@ -16,10 +17,11 @@ myProjects.push(myTestProject2)
 
 myTestProject.addToDos("MyTestTodo", "SomeDesc", "dueDatePendiente", "someNote", "Urgent", false)
 myTestProject.removeToDos(myTestProject[0])
-myTestProject.removeProject()
+console.log(myProjects)
+removeProject(myTestProject)
 console.log(myProjects)
 
 // test manual para verificar sujeto/obs
 
 
-export {myProjects, setMyProjects}
+export {myProjects, removeProject}

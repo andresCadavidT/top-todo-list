@@ -11,6 +11,21 @@ const projects = (function(){
 })()
 
 function createProject(name){
+    createProject.projectObservers = []
+
+    createProject.addObserver = function(newOb){
+        createProject.projectObservers.push(newOb)
+    }
+
+    createProject.removeObserver = function(obToRem){
+        createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
+    }
+
+    createProject.notifyObservers = function(){
+        createProject.projectObservers.forEach((ob)=>{
+            ob.alert("some")
+        })
+    }
     return{
         name,
         toDos: [],
@@ -23,26 +38,12 @@ function createProject(name){
     }
 }
 
-
-
-
-// createProject.projectObservers = []
-
-// createProject.addObserver = function(newOb){
-//     createProject.projectObservers.push(newOb)
-// }
-
-// createProject.removeObserver = function(obToRem){
-//     createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
-// }
-
-// createProject.notifyObservers = function(){
-//     createProject.projectObservers.forEach((ob)=>{
-//         ob.alert("some")
-//     })
-// }
-
 export { createProject, projects }
+
+
+
+
+
 
 
 

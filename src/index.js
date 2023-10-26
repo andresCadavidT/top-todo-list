@@ -27,10 +27,10 @@ console.log(projects.getMyProjects())
 
 
 // test manual para verificar sujeto/obs
-// const theAside = aside()
+const theAside = aside
 
-// createProject.addObserver(theAside)
-// createProject.notifyObservers()
+createProject.addObserver(theAside)
+createProject.notifyObservers()
 
 
 

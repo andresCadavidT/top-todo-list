@@ -20,11 +20,23 @@ const aside = (function(){
     return {
         alert: function(){
             const listActualProjects = _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
+            while(divAsideProjectList.firstChild){divAsideProjectList.firstChild.remove()}
             listActualProjects.forEach((aProject) => {
                 const p = document.createElement("p")
                 p.classList.add("asideProjectName")
                 p.textContent = aProject.name
-                divAsideProjectList.appendChild(p)
+                const btn = document.createElement("button")
+                btn.classList.add("btnRemoveAsideProjectName")
+                btn.textContent = "X"
+                btn.addEventListener("click", function(){
+                    const father = this.parentElement
+                    father.remove()
+                })
+                const divP = document.createElement("div")
+                divP.classList.add("divAsideProjectName")
+                divP.appendChild(p)
+                divP.appendChild(btn)
+                divAsideProjectList.appendChild(divP)
             });
             console.log("Alert")
             // myProjects.forEach((aProject)=>{myAsideArray.push(aProject)})
@@ -52,31 +64,30 @@ __webpack_require__.r(__webpack_exports__);
 const projects = (function(){
     const myProjects = [];
     return {
-        addProject: function(theProject){myProjects.push(theProject)},
+        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         getMyProjects: function(){return myProjects},
         removeProject: function(projectToRemove){
             let indexToRemove = myProjects.indexOf(projectToRemove)
             myProjects.splice(indexToRemove, 1);
+            projects.notifyObservers()
         }
     }
 })()
 
+projects.projectObservers = [];
+projects.addObserver = function(newOb){
+    projects.projectObservers.push(newOb)
+};
+projects.removeObserver = function(obToRem){
+    projects.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
+};
+projects.notifyObservers = function(){
+    projects.projectObservers.forEach((ob)=>{
+        ob.alert()
+    })
+};
+
 function createProject(name){
-    createProject.projectObservers = []
-
-    createProject.addObserver = function(newOb){
-        createProject.projectObservers.push(newOb)
-    }
-
-    createProject.removeObserver = function(obToRem){
-        createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
-    }
-
-    createProject.notifyObservers = function(){
-        createProject.projectObservers.forEach((ob)=>{
-            ob.alert("some")
-        })
-    }
     return{
         name,
         toDos: [],
@@ -173,6 +184,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Test manual de creacion de varios Projects
+const theAside = _aside__WEBPACK_IMPORTED_MODULE_1__.aside
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addObserver(theAside)
+
 
 const myTestProject = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi")
 const myTestProject2 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi2")
@@ -181,6 +195,8 @@ const myTestProject3 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProj
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject)
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject2)
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject3)
+
+_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.removeProject(myTestProject)
 
 
 const newProject4 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("myNewProject4")
@@ -197,10 +213,8 @@ console.log(_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
 
 
 // test manual para verificar sujeto/obs
-const theAside = _aside__WEBPACK_IMPORTED_MODULE_1__.aside
 
-_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject.addObserver(theAside)
-_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject.notifyObservers()
+// projects.notifyObservers()
 
 
 

@@ -3,6 +3,9 @@ import { aside } from "./aside";
 
 
 // Test manual de creacion de varios Projects
+const theAside = aside
+projects.addObserver(theAside)
+
 
 const myTestProject = createProject("hi")
 const myTestProject2 = createProject("hi2")
@@ -11,6 +14,8 @@ const myTestProject3 = createProject("hi3")
 projects.addProject(myTestProject)
 projects.addProject(myTestProject2)
 projects.addProject(myTestProject3)
+
+projects.removeProject(myTestProject)
 
 
 const newProject4 = createProject("myNewProject4")
@@ -27,10 +32,8 @@ console.log(projects.getMyProjects())
 
 
 // test manual para verificar sujeto/obs
-const theAside = aside
 
-createProject.addObserver(theAside)
-createProject.notifyObservers()
+// projects.notifyObservers()
 
 
 

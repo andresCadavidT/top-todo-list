@@ -1,31 +1,30 @@
 const projects = (function(){
     const myProjects = [];
     return {
-        addProject: function(theProject){myProjects.push(theProject)},
+        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         getMyProjects: function(){return myProjects},
         removeProject: function(projectToRemove){
             let indexToRemove = myProjects.indexOf(projectToRemove)
             myProjects.splice(indexToRemove, 1);
+            projects.notifyObservers()
         }
     }
 })()
 
+projects.projectObservers = [];
+projects.addObserver = function(newOb){
+    projects.projectObservers.push(newOb)
+};
+projects.removeObserver = function(obToRem){
+    projects.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
+};
+projects.notifyObservers = function(){
+    projects.projectObservers.forEach((ob)=>{
+        ob.alert()
+    })
+};
+
 function createProject(name){
-    createProject.projectObservers = []
-
-    createProject.addObserver = function(newOb){
-        createProject.projectObservers.push(newOb)
-    }
-
-    createProject.removeObserver = function(obToRem){
-        createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
-    }
-
-    createProject.notifyObservers = function(){
-        createProject.projectObservers.forEach((ob)=>{
-            ob.alert("some")
-        })
-    }
     return{
         name,
         toDos: [],

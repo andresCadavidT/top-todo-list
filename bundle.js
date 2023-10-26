@@ -52,6 +52,31 @@ const aside = (function(){
 
 
 
+/***/ }),
+
+/***/ "./src/buttonCreateProject.js":
+/*!************************************!*\
+  !*** ./src/buttonCreateProject.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   buttonCreateProject: () => (/* binding */ buttonCreateProject)
+/* harmony export */ });
+/* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
+
+
+    const buttonCreateProject = document.createElement("button")
+    buttonCreateProject.textContent = "Create New Project"
+    buttonCreateProject.addEventListener("click", function(){
+        const name = prompt("name project") // PENDIENTE INTERFAZ
+        const myNewproject = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)(name)
+        _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myNewproject)
+    })
+
+
+
 
 /***/ }),
 
@@ -254,6 +279,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
 /* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
+/* harmony import */ var _buttonCreateProject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./buttonCreateProject */ "./src/buttonCreateProject.js");
+
 
 
 
@@ -262,6 +289,10 @@ __webpack_require__.r(__webpack_exports__);
 const theAside = _aside__WEBPACK_IMPORTED_MODULE_1__.aside
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addObserver(theAside)
 
+const btnCreateProject = _buttonCreateProject__WEBPACK_IMPORTED_MODULE_2__.buttonCreateProject
+
+const divButtonCreateProject = document.querySelector("#divButtonCreateProject")
+divButtonCreateProject.appendChild(btnCreateProject)
 
 const myTestProject = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi")
 const myTestProject2 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("hi2")

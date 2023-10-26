@@ -28,12 +28,15 @@ const aside = (function(){
                 p.classList.add("asideProjectName")
                 p.textContent = aProject.name
                 p.addEventListener("click", function(){
-                    ;(0,_generateSmallToDoCard__WEBPACK_IMPORTED_MODULE_1__.generateSmallToDoCard)(aProject)
+                    const myNewTodoCard = (0,_generateSmallToDoCard__WEBPACK_IMPORTED_MODULE_1__.generateSmallToDoCard)(aProject)
+                    sectionToDos.appendChild(myNewTodoCard)
                 })
                 const btn = document.createElement("button")
                 btn.classList.add("btnRemoveAsideProjectName")
                 btn.textContent = "X"
                 btn.addEventListener("click", function(){
+                    const sectionToDos = document.querySelector("#sectionToDos")
+                    while(sectionToDos.firstChild){sectionToDos.firstChild.remove()}
                     const father = this.parentElement
                     father.remove()
                 })
@@ -43,8 +46,6 @@ const aside = (function(){
                 divP.appendChild(btn)
                 divAsideProjectList.appendChild(divP)
             });
-            console.log("Alert")
-            // myProjects.forEach((aProject)=>{myAsideArray.push(aProject)})
         }
     }
 })()
@@ -157,7 +158,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 
 const generateSmallToDoCard = function(aProject){
-    const sectionToDos = document.querySelector("#sectionToDos")
         const divProjectAndToDo = document.createElement("div")
             const divProjectTitle = document.createElement("div")
                 const pProjectName = document.createElement("p")
@@ -192,7 +192,6 @@ const generateSmallToDoCard = function(aProject){
                         divToDo.appendChild(checkListBtn)
                         divListToDos.appendChild(divToDo)
                 })
-    sectionToDos.appendChild(divProjectAndToDo)
     divProjectAndToDo.appendChild(divProjectTitle)
     divProjectAndToDo.appendChild(divListToDos)
     divProjectTitle.appendChild(pProjectName)
@@ -201,6 +200,8 @@ const generateSmallToDoCard = function(aProject){
     divProjectTitle.classList.add("divProjectTitle")
     pProjectName.classList.add("pProjectName")
     divListToDos.classList.add("divListToDos")
+
+    return divProjectAndToDo
     }
 
 

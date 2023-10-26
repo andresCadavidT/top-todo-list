@@ -15,16 +15,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
 
 
-console.log(_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects())
-
-function aside(){
+const aside = (function(){
+    const divAsideProjectList = document.querySelector("#asideProjectList")
     return {
         alert: function(){
+            const listActualProjects = _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
+            listActualProjects.forEach((aProject) => {
+                const p = document.createElement("p")
+                p.classList.add("asideProjectName")
+                p.textContent = aProject.name
+                divAsideProjectList.appendChild(p)
+            });
             console.log("Alert")
             // myProjects.forEach((aProject)=>{myAsideArray.push(aProject)})
         }
     }
-}
+})()
 
 
 
@@ -56,6 +62,21 @@ const projects = (function(){
 })()
 
 function createProject(name){
+    createProject.projectObservers = []
+
+    createProject.addObserver = function(newOb){
+        createProject.projectObservers.push(newOb)
+    }
+
+    createProject.removeObserver = function(obToRem){
+        createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
+    }
+
+    createProject.notifyObservers = function(){
+        createProject.projectObservers.forEach((ob)=>{
+            ob.alert("some")
+        })
+    }
     return{
         name,
         toDos: [],
@@ -71,21 +92,7 @@ function createProject(name){
 
 
 
-// createProject.projectObservers = []
 
-// createProject.addObserver = function(newOb){
-//     createProject.projectObservers.push(newOb)
-// }
-
-// createProject.removeObserver = function(obToRem){
-//     createProject.projectObservers = projectObservers.filter(ob=>ob!==obToRem)
-// }
-
-// createProject.notifyObservers = function(){
-//     createProject.projectObservers.forEach((ob)=>{
-//         ob.alert("some")
-//     })
-// }
 
 
 
@@ -190,10 +197,10 @@ console.log(_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
 
 
 // test manual para verificar sujeto/obs
-// const theAside = aside()
+const theAside = _aside__WEBPACK_IMPORTED_MODULE_1__.aside
 
-// createProject.addObserver(theAside)
-// createProject.notifyObservers()
+_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject.addObserver(theAside)
+_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject.notifyObservers()
 
 
 

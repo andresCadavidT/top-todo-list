@@ -32,6 +32,5 @@ const aside = (function(){
         }
     }
 })()
-
 export {aside}
 

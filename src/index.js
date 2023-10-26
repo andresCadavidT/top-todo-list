@@ -1,11 +1,16 @@
 import { createProject, projects } from "./createProject";
 import { aside } from "./aside";
+import { buttonCreateProject } from "./buttonCreateProject";
 
 
 // Test manual de creacion de varios Projects
 const theAside = aside
 projects.addObserver(theAside)
 
+const btnCreateProject = buttonCreateProject
+
+const divButtonCreateProject = document.querySelector("#divButtonCreateProject")
+divButtonCreateProject.appendChild(btnCreateProject)
 
 const myTestProject = createProject("hi")
 const myTestProject2 = createProject("hi2")

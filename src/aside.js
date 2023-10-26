@@ -12,12 +12,15 @@ const aside = (function(){
                 p.classList.add("asideProjectName")
                 p.textContent = aProject.name
                 p.addEventListener("click", function(){
-                    generateSmallToDoCard(aProject)
+                    const myNewTodoCard = generateSmallToDoCard(aProject)
+                    sectionToDos.appendChild(myNewTodoCard)
                 })
                 const btn = document.createElement("button")
                 btn.classList.add("btnRemoveAsideProjectName")
                 btn.textContent = "X"
                 btn.addEventListener("click", function(){
+                    const sectionToDos = document.querySelector("#sectionToDos")
+                    while(sectionToDos.firstChild){sectionToDos.firstChild.remove()}
                     const father = this.parentElement
                     father.remove()
                 })
@@ -27,8 +30,6 @@ const aside = (function(){
                 divP.appendChild(btn)
                 divAsideProjectList.appendChild(divP)
             });
-            console.log("Alert")
-            // myProjects.forEach((aProject)=>{myAsideArray.push(aProject)})
         }
     }
 })()

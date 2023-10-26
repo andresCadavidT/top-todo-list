@@ -1,6 +1,5 @@
 
 const generateSmallToDoCard = function(aProject){
-    const sectionToDos = document.querySelector("#sectionToDos")
         const divProjectAndToDo = document.createElement("div")
             const divProjectTitle = document.createElement("div")
                 const pProjectName = document.createElement("p")
@@ -35,7 +34,6 @@ const generateSmallToDoCard = function(aProject){
                         divToDo.appendChild(checkListBtn)
                         divListToDos.appendChild(divToDo)
                 })
-    sectionToDos.appendChild(divProjectAndToDo)
     divProjectAndToDo.appendChild(divProjectTitle)
     divProjectAndToDo.appendChild(divListToDos)
     divProjectTitle.appendChild(pProjectName)
@@ -44,6 +42,8 @@ const generateSmallToDoCard = function(aProject){
     divProjectTitle.classList.add("divProjectTitle")
     pProjectName.classList.add("pProjectName")
     divListToDos.classList.add("divListToDos")
+
+    return divProjectAndToDo
     }
 
 

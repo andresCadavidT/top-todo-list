@@ -15,7 +15,11 @@ projects.addProject(myTestProject)
 projects.addProject(myTestProject2)
 projects.addProject(myTestProject3)
 
-projects.removeProject(myTestProject)
+
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", true )
 
 
 const newProject4 = createProject("myNewProject4")

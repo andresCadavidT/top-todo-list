@@ -1,4 +1,5 @@
 import { projects } from "./createProject"
+import { generateSmallToDoCard } from "./generateSmallToDoCard"
 
 const aside = (function(){
     const divAsideProjectList = document.querySelector("#asideProjectList")
@@ -10,6 +11,9 @@ const aside = (function(){
                 const p = document.createElement("p")
                 p.classList.add("asideProjectName")
                 p.textContent = aProject.name
+                p.addEventListener("click", function(){
+                    generateSmallToDoCard(aProject)
+                })
                 const btn = document.createElement("button")
                 btn.classList.add("btnRemoveAsideProjectName")
                 btn.textContent = "X"

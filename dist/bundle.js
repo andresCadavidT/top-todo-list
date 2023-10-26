@@ -13,6 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   aside: () => (/* binding */ aside)
 /* harmony export */ });
 /* harmony import */ var _createProject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createProject */ "./src/createProject.js");
+/* harmony import */ var _generateSmallToDoCard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./generateSmallToDoCard */ "./src/generateSmallToDoCard.js");
+
 
 
 const aside = (function(){
@@ -25,6 +27,9 @@ const aside = (function(){
                 const p = document.createElement("p")
                 p.classList.add("asideProjectName")
                 p.textContent = aProject.name
+                p.addEventListener("click", function(){
+                    ;(0,_generateSmallToDoCard__WEBPACK_IMPORTED_MODULE_1__.generateSmallToDoCard)(aProject)
+                })
                 const btn = document.createElement("button")
                 btn.classList.add("btnRemoveAsideProjectName")
                 btn.textContent = "X"
@@ -64,8 +69,8 @@ __webpack_require__.r(__webpack_exports__);
 const projects = (function(){
     const myProjects = [];
     return {
-        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         getMyProjects: function(){return myProjects},
+        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         removeProject: function(projectToRemove){
             let indexToRemove = myProjects.indexOf(projectToRemove)
             myProjects.splice(indexToRemove, 1);
@@ -91,12 +96,13 @@ function createProject(name){
     return{
         name,
         toDos: [],
-        removeToDos: function(toDoToRemove){
-            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
-        },
-        addToDos: function(Title, description, dueDate, notes, priority, checkList = false){
-            const newTodo = {Title, description, dueDate, notes, priority, checkList}
+        getToDos: function(){return this.toDos},
+        addToDo: function(title, description, dueDate, notes, priority, checkList = false){
+            const newTodo = {title, description, dueDate, notes, priority, checkList}
             this.toDos.push(newTodo)},
+        removeToDo: function(toDoToRemove){
+            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
+        }
     }
 }
 
@@ -111,6 +117,75 @@ function createProject(name){
 
 
 
+
+/***/ }),
+
+/***/ "./src/generateSmallToDoCard.js":
+/*!**************************************!*\
+  !*** ./src/generateSmallToDoCard.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   generateSmallToDoCard: () => (/* binding */ generateSmallToDoCard)
+/* harmony export */ });
+
+const generateSmallToDoCard = function(aProject){
+    const sectionToDos = document.querySelector("#sectionToDos")
+        const divProjectAndToDo = document.createElement("div")
+            const divProjectTitle = document.createElement("div")
+                const pProjectName = document.createElement("p")
+                pProjectName.textContent = aProject.name    
+            const divListToDos = document.createElement("div")
+                const myActualToDos = aProject.getToDos()
+                myActualToDos.forEach((aToDo)=>{
+                    const divToDo = document.createElement("div")
+                        const divTitle = document.createElement("div")
+                            const pTitle = document.createElement("p")
+                            pTitle.textContent = aToDo.title
+                            divTitle.appendChild(pTitle)
+                        const checkListBtn = document.createElement("input")
+                            checkListBtn.type = "checkbox"
+                            checkListBtn.checked = aToDo.checkList
+                            checkListBtn.addEventListener("click", function(){
+                                if (checkListBtn.checked == true) {
+                                    divToDo.classList.add("divToDoChecked")
+                                    divToDo.classList.remove("divToDoUnChecked")
+                                }
+                                if (checkListBtn.checked == false){
+                                    divToDo.classList.remove("divToDoChecked")
+                                    divToDo.classList.add("divToDoUnChecked")
+                                }
+                            })
+                        const divDueDate = document.createElement("div")
+                            divDueDate.style.height = "20px"
+                            divDueDate.style.width = "20px"
+                            divDueDate.style.backgroundColor= "black"
+                        divToDo.appendChild(divTitle)
+                        divToDo.appendChild(divDueDate)
+                        divToDo.appendChild(checkListBtn)
+                        divListToDos.appendChild(divToDo)
+                })
+    sectionToDos.appendChild(divProjectAndToDo)
+    divProjectAndToDo.appendChild(divProjectTitle)
+    divProjectAndToDo.appendChild(divListToDos)
+    divProjectTitle.appendChild(pProjectName)
+
+    divProjectAndToDo.classList.add("divProjectAndToDo")
+    divProjectTitle.classList.add("divProjectTitle")
+    pProjectName.classList.add("pProjectName")
+    divListToDos.classList.add("divListToDos")
+    }
+
+
+
+
+
+
+        // const pToDoName = document.createElement("p")
+        // pToDoName.classList.add("pToDoName")
+        // pToDoName.textContent = aProject.name
 
 /***/ })
 
@@ -196,7 +271,11 @@ _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject)
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject2)
 _createProject__WEBPACK_IMPORTED_MODULE_0__.projects.addProject(myTestProject3)
 
-_createProject__WEBPACK_IMPORTED_MODULE_0__.projects.removeProject(myTestProject)
+
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", false )
+myTestProject.addToDo("SomeToDoTitle", "someDesc", "PENDIENTEDueDate", "someNote", "MaxPriority", true )
 
 
 const newProject4 = (0,_createProject__WEBPACK_IMPORTED_MODULE_0__.createProject)("myNewProject4")

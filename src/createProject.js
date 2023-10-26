@@ -1,8 +1,8 @@
 const projects = (function(){
     const myProjects = [];
     return {
-        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         getMyProjects: function(){return myProjects},
+        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
         removeProject: function(projectToRemove){
             let indexToRemove = myProjects.indexOf(projectToRemove)
             myProjects.splice(indexToRemove, 1);
@@ -28,12 +28,13 @@ function createProject(name){
     return{
         name,
         toDos: [],
-        removeToDos: function(toDoToRemove){
-            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
-        },
-        addToDos: function(Title, description, dueDate, notes, priority, checkList = false){
-            const newTodo = {Title, description, dueDate, notes, priority, checkList}
+        getToDos: function(){return this.toDos},
+        addToDo: function(title, description, dueDate, notes, priority, checkList = false){
+            const newTodo = {title, description, dueDate, notes, priority, checkList}
             this.toDos.push(newTodo)},
+        removeToDo: function(toDoToRemove){
+            this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
+        }
     }
 }
 

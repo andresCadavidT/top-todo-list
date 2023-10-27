@@ -180,7 +180,6 @@ header{
     padding-left: 10px;
     padding-right: 10px;
     flex-direction: column;
-    align-items: left;
 }
 
 #asideProjectList{
@@ -188,11 +187,12 @@ header{
     width: 100%;
     height: 60px;
     display: flex;
+    flex-direction: column;
     
 }
 
 #divCreateProject{
-    align-self: flex-end;
+    align-self: center;
     padding: 5px;
 }
 
@@ -205,7 +205,7 @@ header{
     border-radius: 5px;
     border: 1px solid white;
 }
-`, "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":";AACA;IACI;AACJ;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,sBAAsB;;AAE1B;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,aAAa;IACb,oCAAoC;IACpC,iBAAiB;IACjB,aAAa;IACb,gCAAgC;IAChC,qBAAqB;AACzB;;;AAGA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,uBAAuB;IACvB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;;AAGA;IACI,YAAY;IACZ,iBAAiB;IACjB,gBAAgB;IAChB,kCAAkC;AACtC;;AAEA,YAAY;;AAEZ;IACI,YAAY;IACZ,YAAY;IACZ,yCAAyC;IACzC,eAAe;IACf,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;IACnB,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,uBAAuB;IACvB,WAAW;IACX,YAAY;IACZ,aAAa;;AAEjB;;AAEA;IACI,oBAAoB;IACpB,YAAY;AAChB;;;AAGA;IACI,mCAAmC;IACnC,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;AAC3B","sourcesContent":["\n:root{\n    --main-color: #3d0c11\n}\n\n*{\n    padding: 0px;\n    margin: 0px;\n    box-sizing: border-box;\n\n}\n\nbody{\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n    grid-template-rows: 140px 1fr; \n    height: 100vh;\n    width: 100vw;\n}\n\nheader{\n    align-items: center;\n    width: 100%;\n    height: 140px;\n    background-color: var(--main-color) ;\n    grid-column:1 / 3; \n    display: grid;\n    grid-template-columns: 150px 2fr;\n    justify-items: center;\n}\n\n\n.boxAvatar{\n    width: 100px;\n    height: 100px;\n    overflow: hidden;\n    border: none;\n    border-radius: 100%;\n    display: flex;\n    justify-content: center;\n    border: 3px white solid;\n}\n\n#avatar{\n    width: 200px;\n    height: auto;\n}\n\n\n.headerTitle{\n    color: white;\n    font-size: 3.5rem;\n    font-weight: 800;\n    font-family: Helvetica, sans-serif;\n}\n\n/*  aside  */\n\n#aside{\n    width: 150px;\n    height: auto;\n    border-right: 1px solid var(--main-color);\n    grid-row: 2 / 3;\n    display: flex;\n    padding-top: 20px;\n    padding-left: 10px;\n    padding-right: 10px;\n    flex-direction: column;\n    align-items: left;\n}\n\n#asideProjectList{\n    border: solid 1px black;\n    width: 100%;\n    height: 60px;\n    display: flex;\n    \n}\n\n#divCreateProject{\n    align-self: flex-end;\n    padding: 5px;\n}\n\n\n.btnCreateProject{\n    background-color: var(--main-color);\n    color: white;\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":";AACA;IACI;AACJ;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,sBAAsB;;AAE1B;;AAEA;IACI,aAAa;IACb,8BAA8B;IAC9B,6BAA6B;IAC7B,aAAa;IACb,YAAY;AAChB;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,aAAa;IACb,oCAAoC;IACpC,iBAAiB;IACjB,aAAa;IACb,gCAAgC;IAChC,qBAAqB;AACzB;;;AAGA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,YAAY;IACZ,mBAAmB;IACnB,aAAa;IACb,uBAAuB;IACvB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,YAAY;AAChB;;;AAGA;IACI,YAAY;IACZ,iBAAiB;IACjB,gBAAgB;IAChB,kCAAkC;AACtC;;AAEA,YAAY;;AAEZ;IACI,YAAY;IACZ,YAAY;IACZ,yCAAyC;IACzC,eAAe;IACf,aAAa;IACb,iBAAiB;IACjB,kBAAkB;IAClB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,uBAAuB;IACvB,WAAW;IACX,YAAY;IACZ,aAAa;IACb,sBAAsB;;AAE1B;;AAEA;IACI,kBAAkB;IAClB,YAAY;AAChB;;;AAGA;IACI,mCAAmC;IACnC,YAAY;IACZ,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;AAC3B","sourcesContent":["\n:root{\n    --main-color: #3d0c11\n}\n\n*{\n    padding: 0px;\n    margin: 0px;\n    box-sizing: border-box;\n\n}\n\nbody{\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n    grid-template-rows: 140px 1fr; \n    height: 100vh;\n    width: 100vw;\n}\n\nheader{\n    align-items: center;\n    width: 100%;\n    height: 140px;\n    background-color: var(--main-color) ;\n    grid-column:1 / 3; \n    display: grid;\n    grid-template-columns: 150px 2fr;\n    justify-items: center;\n}\n\n\n.boxAvatar{\n    width: 100px;\n    height: 100px;\n    overflow: hidden;\n    border: none;\n    border-radius: 100%;\n    display: flex;\n    justify-content: center;\n    border: 3px white solid;\n}\n\n#avatar{\n    width: 200px;\n    height: auto;\n}\n\n\n.headerTitle{\n    color: white;\n    font-size: 3.5rem;\n    font-weight: 800;\n    font-family: Helvetica, sans-serif;\n}\n\n/*  aside  */\n\n#aside{\n    width: 150px;\n    height: auto;\n    border-right: 1px solid var(--main-color);\n    grid-row: 2 / 3;\n    display: flex;\n    padding-top: 20px;\n    padding-left: 10px;\n    padding-right: 10px;\n    flex-direction: column;\n}\n\n#asideProjectList{\n    border: solid 1px black;\n    width: 100%;\n    height: 60px;\n    display: flex;\n    flex-direction: column;\n    \n}\n\n#divCreateProject{\n    align-self: center;\n    padding: 5px;\n}\n\n\n.btnCreateProject{\n    background-color: var(--main-color);\n    color: white;\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -739,7 +739,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const aside = {
     notifyNewProject: function(){
-        console.log("hi im a new project on aside" )
+        console.log("here")
+        console.log(_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$asideProjectList.firstChild )
+        while (_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$asideProjectList.firstChild){_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$asideProjectList.firstChild.remove()}
+        let myProjects = _projects__WEBPACK_IMPORTED_MODULE_1__.projects.getMyProjects()
+        myProjects.forEach((theProject)=>{
+            let boxName = document.createElement("div")
+            boxName.classList.add("boxNameAside")
+            boxName.innerText = theProject.name
+            _consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$asideProjectList.appendChild(boxName)
+            console.log(theProject.name)
+        })
     }
 }
 
@@ -767,6 +777,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   $imgAvatar: () => (/* binding */ $imgAvatar)
 /* harmony export */ });
 /* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects */ "./src/projects.js");
+/* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
+
 
 
 const $dialogCreateProject = document.querySelector('#dialog');
@@ -786,15 +798,13 @@ const $cerrarDialog = document.querySelector('.cancel');
     });
 
 const $acceptProject = document.querySelector(".create")
-
 $acceptProject.addEventListener("click", function(event){
     event.preventDefault()
     const $nameNewProject = document.querySelector("#inputNameNewProject")
-    console.log($nameNewProject.value)
     _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
     $nameNewProject.value = ""
-    console.log(_projects__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects())
+    _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_1__.aside, "notifyNewProject")
 })
 
 const $imgAvatar = document.querySelector("#avatar")
@@ -836,7 +846,7 @@ const projects = (function(){
         },        
         notifyObservers: function(observer, varName){
             observers.forEach((obs)=>{
-                if(obs == observer){obs[varName]()}
+                if(obs == observer){obs[varName]();console.log("notificado")}
             })
         },
         createProject: function(name){
@@ -1017,9 +1027,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject("myFirstTestProject")
-
 _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_3__.aside, "notifyNewProject")
 
+_projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject("AnotherProject")
+_projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_3__.aside, "notifyNewProject")
 
 
 // Temporal, para verificar cuantos projects existen. 

@@ -1,4 +1,5 @@
 import { projects } from "./projects";
+import { aside } from "./aside"
 
 const $dialogCreateProject = document.querySelector('#dialog');
 const $btnCreateProject = document.createElement("button")
@@ -17,15 +18,13 @@ const $cerrarDialog = document.querySelector('.cancel');
     });
 
 const $acceptProject = document.querySelector(".create")
-
 $acceptProject.addEventListener("click", function(event){
     event.preventDefault()
     const $nameNewProject = document.querySelector("#inputNameNewProject")
-    console.log($nameNewProject.value)
     projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
     $nameNewProject.value = ""
-    console.log(projects.getMyProjects())
+    projects.notifyObservers(aside, "notifyNewProject")
 })
 
 const $imgAvatar = document.querySelector("#avatar")

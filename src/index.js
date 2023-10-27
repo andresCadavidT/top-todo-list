@@ -13,5 +13,3 @@ projects.createProject("AnotherProject")
 projects.notifyObservers(aside, "notifyNewProject")
 
 
-// Temporal, para verificar cuantos projects existen. 
-console.log(projects.getMyProjects())

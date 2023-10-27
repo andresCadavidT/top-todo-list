@@ -19,7 +19,7 @@ const projects = (function(){
         },        
         notifyObservers: function(observer, varName){
             observers.forEach((obs)=>{
-                if(obs == observer){obs[varName]();console.log("notificado")}
+                if(obs == observer){obs[varName]();}
             })
         },
         createProject: function(name){

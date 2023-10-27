@@ -27,6 +27,11 @@ $acceptProject.addEventListener("click", function(event){
     projects.notifyObservers(aside, "notifyNewProject")
 })
 
+$acceptProject.addEventListener("keydown", function(event){
+    event.preventDefault()
+})
+
+
 const $imgAvatar = document.querySelector("#avatar")
 
 const $asideProjectList = document.querySelector("#asideProjectList")

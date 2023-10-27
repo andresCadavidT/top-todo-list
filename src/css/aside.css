@@ -1,0 +1,17 @@
+.boxAnAsideProject{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+}
+
+.btnRemoveProject{
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 2px;
+    border: none;
+    padding: 3px;
+}

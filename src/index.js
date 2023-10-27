@@ -1,13 +1,16 @@
 import { projects } from "./projects";
-import createBtn from "./createBtn";
-import { eventListenerBtnCreateProject } from "./eventListeners";
-import { divButtonCreateProject } from "./domSelectors";
+import "./consts-listeners"
+import "./$insert"
+import {aside} from "./aside"
+// css
+import "./css/dialogCreateProject.css"
+import "./css/index.css"
+
+projects.createProject("myFirstTestProject")
+
+projects.notifyObservers(aside, "notifyNewProject")
 
 
 
-
-const btnCreateProject = createBtn("Create New Project", "btnCreateProject")
-divButtonCreateProject.appendChild(btnCreateProject)
-eventListenerBtnCreateProject(btnCreateProject)
-
-console.log(btnCreateProject)
+// Temporal, para verificar cuantos projects existen. 
+console.log(projects.getMyProjects())

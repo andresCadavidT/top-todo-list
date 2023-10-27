@@ -3,25 +3,27 @@ const projects = (function(){
     const observers = [];
     return {
         getMyProjects: function(){return myProjects},
-        addProject: function(theProject){myProjects.push(theProject); projects.notifyObservers()},
+        addProject: function(theProject){
+            myProjects.push(theProject);
+            projects.notifyObservers("notifyNewProject")
+        },
         removeProject: function(projectToRemove){
             let indexToRemove = myProjects.indexOf(projectToRemove)
             myProjects.splice(indexToRemove, 1);
-            projects.notifyObservers()
         },
         addObserver: function(newOb){
-            projects.observers.push(newOb)
+            observers.push(newOb)
         },
         removeObserver: function(obToRem){
-            projects.observers = observers.filter(ob=>ob!==obToRem)
-        },
-        notifyObservers: function(varName){
-            projects.observers.forEach((ob)=>{
-                ob.varName
+            observers = observers.filter(ob=>ob!==obToRem)
+        },        
+        notifyObservers: function(observer, varName){
+            observers.forEach((obs)=>{
+                if(obs == observer){obs[varName]()}
             })
         },
         createProject: function(name){
-            return{
+            const newProject = {
                 name,
                 toDos: [],
                 getToDos: function(){return this.toDos},
@@ -32,9 +34,18 @@ const projects = (function(){
                     this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
                 }
             }
+            projects.addProject(newProject)
+            return newProject
         }
     }
 })()
+
+
+
+
+
+
+
 export { projects }
 
 

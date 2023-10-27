@@ -6,12 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="divButtonCreateProject">
-        
-    </div>
-    <div id="asideProjectList">
-    </div>
-
+    <dialog id="dialog">
+        <form action="">
+            <div class="formNewProject">
+                <div class="addProject">Add Project</div>
+                <label>
+                    Title:*
+                    <input id="inputNameNewProject" type="text" class="inputTitle" required placeholder="some title here" autocomplete="off">
+                </label>
+                <div>
+                    <button class="cancel">Cancel</button>
+                    <button class="create" type="submit" >Create</button>
+                </div>
+            </div>
+        </form>
+    </dialog>
+    <header>
+        <div class="boxAvatar">
+            <img id="avatar" alt="avatar">
+        </div>
+        <div id="boxTitle">
+            <p class="headerTitle">Basic To Do</p>
+        </div#>
+    </header>
+    <aside id="aside">
+        <div id="asideProjectList">
+            <div id="divCreateProject"></div>
+        </div>
+    </aside>
     <section id="sectionToDos">
 
     </section>

@@ -297,11 +297,12 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     width: 250px;
-    height: 400px;
+    height: clamp(300px 350px 600px);
     margin: 0 auto;
     margin-top: 30px;
     background-color: var(--main-color);
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -317,20 +318,22 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-overflow: clip;    
+    text-overflow: clip; 
+    font-size: 1.1rem;
+    font-weight: 600;   
 }
 
 .boxToDosList{
     width: 200px;
-    height: 300px;
     border-radius: 20px;
     background-color: white;
     display: flex;
+    min-height: clamp(100px, 200px, 400px);
     flex-direction: column;
     align-items: center;
     padding: 15px;
     gap: 10px;
-    overflow:hidden
+    margin-bottom: 20px;
 }
 
 .boxMyToDo{
@@ -343,6 +346,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     color:rgb(0, 0, 0);
     opacity: 0.3;
     text-decoration: line-through
+}
+
+.checkBox{
+    cursor: pointer;
 }
 
 .checkBox:checked{
@@ -365,6 +372,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     overflow: hidden   ;
 }
 
+
+/* buttons  */
+
+.boxButtons{
+    display: flex;
+    gap: 10px;
+}
+
 .buttonNewToDo{
     background-color: white;
     color: var(--main-color);
@@ -372,11 +387,29 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    height: 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
+.btnClearCheckedToDos{
+    background-color: white;
+    color: var(--main-color);
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    height: 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
-`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;IACT;AACJ;;AAEA;IACI,aAAa;IACb,QAAQ;;AAEZ;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ;AACJ;;AAEA;QACQ,YAAY;QACZ,aAAa;QACb,+BAA+B;AACvC;;;AAGA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;AACvB","sourcesContent":[".boxMainToDo{\n    width: 250px;\n    height: 400px;\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 200px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip;    \n}\n\n.boxToDosList{\n    width: 200px;\n    height: 300px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n    overflow:hidden\n}\n\n.boxMyToDo{\n    display: flex;\n    gap: 5px;\n\n}\n\n.checked{\n    color:rgb(0, 0, 0);\n    opacity: 0.3;\n    text-decoration: line-through\n}\n\n.checkBox:checked{\n        border: none;\n        outline: none;\n        accent-color: var(--main-color);\n}\n\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden   ;\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 20px;\n}\n\n\n"],"sourceRoot":""}]);
+}
+
+`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,gCAAgC;IAChC,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,OAAO;IACP,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;IACnB,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sCAAsC;IACtC,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,QAAQ;;AAEZ;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ;AACJ;;AAEA;IACI,eAAe;AACnB;;AAEA;QACQ,YAAY;QACZ,aAAa;QACb,+BAA+B;AACvC;;;AAGA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,mBAAmB;AACvB;;;AAGA,aAAa;;AAEb;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;;AAEnB","sourcesContent":[".boxMainToDo{\n    width: 250px;\n    height: clamp(300px 350px 600px);\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 200px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip; \n    font-size: 1.1rem;\n    font-weight: 600;   \n}\n\n.boxToDosList{\n    width: 200px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    min-height: clamp(100px, 200px, 400px);\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n    margin-bottom: 20px;\n}\n\n.boxMyToDo{\n    display: flex;\n    gap: 5px;\n\n}\n\n.checked{\n    color:rgb(0, 0, 0);\n    opacity: 0.3;\n    text-decoration: line-through\n}\n\n.checkBox{\n    cursor: pointer;\n}\n\n.checkBox:checked{\n        border: none;\n        outline: none;\n        accent-color: var(--main-color);\n}\n\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden   ;\n}\n\n\n/* buttons  */\n\n.boxButtons{\n    display: flex;\n    gap: 10px;\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n}\n\n.btnClearCheckedToDos{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 400;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1036,6 +1069,7 @@ const aside = {
             btnRemoveProject.addEventListener("click", ()=>{
                 _projects__WEBPACK_IMPORTED_MODULE_1__.projects.removeProject(theProject)
                 _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(aside, "notifyNewProject")
+                _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(_sectionToDos__WEBPACK_IMPORTED_MODULE_3__.sectionToDos, "clearSection")
             })
 
             let boxAnAsideProject = document.createElement("div")
@@ -1100,17 +1134,28 @@ const $cerrarDialog = document.querySelector('.cancel');
         $dialogCreateProject.close();
     });
 
+
+
+const $nameNewProject = document.querySelector("#inputNameNewProject")
+
 const $acceptProject = document.querySelector(".create")
+
 $acceptProject.addEventListener("click", function(event){
-    const $nameNewProject = document.querySelector("#inputNameNewProject")
     _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
     $nameNewProject.value = ""
     _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_1__.aside, "notifyNewProject")
 })
 
-
-
+$nameNewProject.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        event.preventDefault()
+        _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject($nameNewProject.value)
+        $dialogCreateProject.close();
+        $nameNewProject.value = ""
+        _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_1__.aside, "notifyNewProject")
+    }
+})
 
 const $imgAvatar = document.querySelector("#avatar")
 
@@ -1230,6 +1275,14 @@ const sectionToDos = {
             aProject.addToDo(prompt("NameTask"))
             _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
         })
+
+        let btnClearCheckedToDos = document.createElement("button")
+        btnClearCheckedToDos.textContent = "Clear done task"
+        btnClearCheckedToDos.className = "btnClearCheckedToDos"
+        btnClearCheckedToDos.addEventListener("click", function(){
+            console.log("clearToDosDone")
+        })
+
         let myToDos = aProject.getToDos()
         myToDos.forEach((aToDo)=>{
             let checkBox = document.createElement("input")
@@ -1267,11 +1320,19 @@ const sectionToDos = {
         })
 
         boxMainToDo.appendChild(boxProjectName)
-        boxMainToDo.appendChild(boxToDosList)
-        boxMainToDo.appendChild(buttonNewToDo)
+        const boxButtons = document.createElement("div")
+        boxButtons.className = "boxButtons"
+        boxButtons.appendChild(buttonNewToDo)
+        boxButtons.appendChild(btnClearCheckedToDos)
 
+        boxMainToDo.appendChild(boxButtons)
+        boxMainToDo.appendChild(boxToDosList)
+        
         _consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.appendChild(boxMainToDo)
     },
+    clearSection: function(){
+        if(_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild){_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild.remove()}
+    }
 }
 
 _projects__WEBPACK_IMPORTED_MODULE_1__.projects.addObserver(sectionToDos)

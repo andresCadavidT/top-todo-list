@@ -7,17 +7,17 @@ const sectionToDos = {
     notifySectionToDos: function(aProject){
         while($sectionToDos.firstChild){$sectionToDos.firstChild.remove()}
         
-        let boxMainToDo = document.createElement("div")
+        const boxMainToDo = document.createElement("div")
         boxMainToDo.className = "boxMainToDo"
 
-        let boxProjectName = document.createElement("div")
+        const boxProjectName = document.createElement("div")
         boxProjectName.className = "boxProjectName"
         boxProjectName.innerText = aProject.name
 
-        let boxToDosList = document.createElement("div")
+        const boxToDosList = document.createElement("div")
         boxToDosList.className = "boxToDosList"
 
-        let buttonNewToDo = document.createElement("button")
+        const buttonNewToDo = document.createElement("button")
         buttonNewToDo.className = "buttonNewToDo"
         buttonNewToDo.textContent = "+ New ToDo"
         buttonNewToDo.addEventListener("click", function(){
@@ -25,27 +25,35 @@ const sectionToDos = {
             projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
         })
 
-        let btnClearCheckedToDos = document.createElement("button")
+        const myToDos = aProject.getToDos()
+
+        const btnClearCheckedToDos = document.createElement("button")
         btnClearCheckedToDos.textContent = "Clear done task"
         btnClearCheckedToDos.className = "btnClearCheckedToDos"
         btnClearCheckedToDos.addEventListener("click", function(){
-            console.log("clearToDosDone")
+            myToDos.forEach(aToDo => {
+                if(aToDo.checked === true){
+                console.log("ENTRE AL IF")
+                aProject.removeToDo(aToDo)
+                console.log(aProject.getToDos())
+                projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
+                }
+            });
         })
 
-        let myToDos = aProject.getToDos()
         myToDos.forEach((aToDo)=>{
-            let checkBox = document.createElement("input")
+            const checkBox = document.createElement("input")
             checkBox.type = "checkbox"
             checkBox.className = "checkBox"
             checkBox.checked = aToDo.checked
 
-            let pName = document.createElement("div")
+            const pName = document.createElement("div")
             pName.className = "pName"
             pName.textContent = aToDo.title
             if(aToDo.checked == true){pName.classList.add("checked")}
             if(aToDo.checked == false){pName.classList.remove("checked")}
 
-            let boxMyToDo = document.createElement("div")
+            const boxMyToDo = document.createElement("div")
             boxMyToDo.className = "boxMyToDo"
             boxMyToDo.appendChild(pName)
             boxMyToDo.appendChild(checkBox)

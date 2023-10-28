@@ -34,7 +34,8 @@ const projects = (function(){
                     this.toDos.push(newTodo)
                 },
                 removeToDo: function(toDoToRemove){
-                    this.toDos = this.toDos.filter((aTodo)=>{aTodo !== toDoToRemove})
+                    this.toDos = this.toDos.filter(someTodo=>someTodo !== toDoToRemove)
+                    
                 }
             }
             projects.addProject(newProject)

@@ -19,7 +19,6 @@ const $cerrarDialog = document.querySelector('.cancel');
 
 const $acceptProject = document.querySelector(".create")
 $acceptProject.addEventListener("click", function(event){
-    event.preventDefault()
     const $nameNewProject = document.querySelector("#inputNameNewProject")
     projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
@@ -27,13 +26,13 @@ $acceptProject.addEventListener("click", function(event){
     projects.notifyObservers(aside, "notifyNewProject")
 })
 
-$acceptProject.addEventListener("keydown", function(event){
-    event.preventDefault()
-})
+
 
 
 const $imgAvatar = document.querySelector("#avatar")
 
 const $asideProjectList = document.querySelector("#asideProjectList")
 
-export { $imgAvatar, $asideProjectList }
+const $sectionToDos = document.querySelector("#sectionToDos")
+
+export { $imgAvatar, $asideProjectList, $sectionToDos }

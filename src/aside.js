@@ -1,20 +1,21 @@
 import { $asideProjectList } from "./consts-listeners";
 import { projects } from "./projects";
 import "./css/aside.css"
+import { sectionToDos } from "./sectionToDos";
 
 
 const aside = {
     notifyNewProject: function(){
         while ($asideProjectList.firstChild){$asideProjectList.firstChild.remove()}
         let myProjects = projects.getMyProjects()
-        myProjects.forEach((theProject)=>{
+        myProjects.forEach((theProject, index)=>{
             let boxName = document.createElement("div")
             boxName.classList.add("boxNameAside")
             boxName.innerText = theProject.name
-
+            
             let btnRemoveProject = document.createElement("button")
             btnRemoveProject.className = "btnRemoveProject"
-            btnRemoveProject.textContent = "X"
+            btnRemoveProject.textContent = "🗑"
             btnRemoveProject.addEventListener("click", ()=>{
                 projects.removeProject(theProject)
                 projects.notifyObservers(aside, "notifyNewProject")
@@ -23,9 +24,16 @@ const aside = {
             let boxAnAsideProject = document.createElement("div")
             boxAnAsideProject.className = "boxAnAsideProject"
             boxAnAsideProject.appendChild(boxName)
-            boxAnAsideProject.appendChild(btnRemoveProject)
+            boxAnAsideProject.addEventListener("click", ()=>{
+                projects.notifyObservers(sectionToDos,"notifySectionToDos", myProjects[index])
+            })
 
-            $asideProjectList.appendChild(boxAnAsideProject)
+            let boxToTheBoxLol = document.createElement("div")
+            boxToTheBoxLol.classList.add("boxToTheBoxLol")
+            boxToTheBoxLol.appendChild(boxAnAsideProject)
+            boxToTheBoxLol.appendChild(btnRemoveProject)
+
+            $asideProjectList.appendChild(boxToTheBoxLol)
         })
     }
 }

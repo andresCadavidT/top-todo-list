@@ -27,9 +27,9 @@ const projects = (function(){
                 name,
                 toDos: [],
                 getToDos: function(){return this.toDos},
-                addToDo: function(title ){
+                addToDo: function(title, checked = false ){
                     //, description, dueDate, notes, priority, checkList = false
-                    const newTodo = {title}
+                    const newTodo = {title, checked}
                     //, description, dueDate, notes, priority, checkList
                     this.toDos.push(newTodo)
                 },

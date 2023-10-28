@@ -21,7 +21,6 @@ const sectionToDos = {
         buttonNewToDo.className = "buttonNewToDo"
         buttonNewToDo.textContent = "+ New ToDo"
         buttonNewToDo.addEventListener("click", function(){
-            console.log("hi")
             aProject.addToDo(prompt("NameTask"))
             projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
         })
@@ -29,20 +28,38 @@ const sectionToDos = {
         myToDos.forEach((aToDo)=>{
             let checkBox = document.createElement("input")
             checkBox.type = "checkbox"
+            checkBox.className = "checkBox"
+            checkBox.checked = aToDo.checked
+
             let pName = document.createElement("div")
             pName.className = "pName"
             pName.textContent = aToDo.title
+            if(aToDo.checked == true){pName.classList.add("checked")}
+            if(aToDo.checked == false){pName.classList.remove("checked")}
 
             let boxMyToDo = document.createElement("div")
             boxMyToDo.className = "boxMyToDo"
             boxMyToDo.appendChild(pName)
             boxMyToDo.appendChild(checkBox)
 
+            checkBox.addEventListener("click", function(){
+                if(aToDo.checked == false){
+                    pName.classList.add("checked")
+                }
+                if(aToDo.checked == true){
+                    pName.classList.remove("checked")
+                }
+                if(checkBox.checked === true){
+                    aToDo.checked = true
+                } 
+                if(checkBox.checked === false) {
+                    aToDo.checked = false
+                }
+            })
+            
             boxToDosList.appendChild(boxMyToDo)
         })
 
-
-        
         boxMainToDo.appendChild(boxProjectName)
         boxMainToDo.appendChild(boxToDosList)
         boxMainToDo.appendChild(buttonNewToDo)

@@ -33,12 +33,27 @@
     align-items: center;
     padding: 15px;
     gap: 10px;
+    overflow:hidden
 }
 
 .boxMyToDo{
     display: flex;
     gap: 5px;
+
 }
+
+.checked{
+    color:rgb(0, 0, 0);
+    opacity: 0.3;
+    text-decoration: line-through
+}
+
+.checkBox:checked{
+        border: none;
+        outline: none;
+        accent-color: var(--main-color);
+}
+
 
 .pName{
     width: 160px;
@@ -50,7 +65,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    overflow: hidden   ;
 }
 
 .buttonNewToDo{

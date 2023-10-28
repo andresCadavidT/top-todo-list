@@ -330,12 +330,27 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     align-items: center;
     padding: 15px;
     gap: 10px;
+    overflow:hidden
 }
 
 .boxMyToDo{
     display: flex;
     gap: 5px;
+
 }
+
+.checked{
+    color:rgb(0, 0, 0);
+    opacity: 0.3;
+    text-decoration: line-through
+}
+
+.checkBox:checked{
+        border: none;
+        outline: none;
+        accent-color: var(--main-color);
+}
+
 
 .pName{
     width: 160px;
@@ -347,7 +362,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    overflow: hidden   ;
 }
 
 .buttonNewToDo{
@@ -361,7 +376,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
 }
 
 
-`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;AACb;;AAEA;IACI,aAAa;IACb,QAAQ;AACZ;;AAEA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;;AAE3B;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;AACvB","sourcesContent":[".boxMainToDo{\n    width: 250px;\n    height: 400px;\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 200px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip;    \n}\n\n.boxToDosList{\n    width: 200px;\n    height: 300px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n}\n\n.boxMyToDo{\n    display: flex;\n    gap: 5px;\n}\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 20px;\n}\n\n\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;IACT;AACJ;;AAEA;IACI,aAAa;IACb,QAAQ;;AAEZ;;AAEA;IACI,kBAAkB;IAClB,YAAY;IACZ;AACJ;;AAEA;QACQ,YAAY;QACZ,aAAa;QACb,+BAA+B;AACvC;;;AAGA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;AACvB","sourcesContent":[".boxMainToDo{\n    width: 250px;\n    height: 400px;\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 200px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip;    \n}\n\n.boxToDosList{\n    width: 200px;\n    height: 300px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n    overflow:hidden\n}\n\n.boxMyToDo{\n    display: flex;\n    gap: 5px;\n\n}\n\n.checked{\n    color:rgb(0, 0, 0);\n    opacity: 0.3;\n    text-decoration: line-through\n}\n\n.checkBox:checked{\n        border: none;\n        outline: none;\n        accent-color: var(--main-color);\n}\n\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden   ;\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 20px;\n}\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1146,9 +1161,9 @@ const projects = (function(){
                 name,
                 toDos: [],
                 getToDos: function(){return this.toDos},
-                addToDo: function(title ){
+                addToDo: function(title, checked = false ){
                     //, description, dueDate, notes, priority, checkList = false
-                    const newTodo = {title}
+                    const newTodo = {title, checked}
                     //, description, dueDate, notes, priority, checkList
                     this.toDos.push(newTodo)
                 },
@@ -1212,7 +1227,6 @@ const sectionToDos = {
         buttonNewToDo.className = "buttonNewToDo"
         buttonNewToDo.textContent = "+ New ToDo"
         buttonNewToDo.addEventListener("click", function(){
-            console.log("hi")
             aProject.addToDo(prompt("NameTask"))
             _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
         })
@@ -1220,20 +1234,38 @@ const sectionToDos = {
         myToDos.forEach((aToDo)=>{
             let checkBox = document.createElement("input")
             checkBox.type = "checkbox"
+            checkBox.className = "checkBox"
+            checkBox.checked = aToDo.checked
+
             let pName = document.createElement("div")
             pName.className = "pName"
             pName.textContent = aToDo.title
+            if(aToDo.checked == true){pName.classList.add("checked")}
+            if(aToDo.checked == false){pName.classList.remove("checked")}
 
             let boxMyToDo = document.createElement("div")
             boxMyToDo.className = "boxMyToDo"
             boxMyToDo.appendChild(pName)
             boxMyToDo.appendChild(checkBox)
 
+            checkBox.addEventListener("click", function(){
+                if(aToDo.checked == false){
+                    pName.classList.add("checked")
+                }
+                if(aToDo.checked == true){
+                    pName.classList.remove("checked")
+                }
+                if(checkBox.checked === true){
+                    aToDo.checked = true
+                } 
+                if(checkBox.checked === false) {
+                    aToDo.checked = false
+                }
+            })
+            
             boxToDosList.appendChild(boxMyToDo)
         })
 
-
-        
         boxMainToDo.appendChild(boxProjectName)
         boxMainToDo.appendChild(boxToDosList)
         boxMainToDo.appendChild(buttonNewToDo)
@@ -1401,16 +1433,7 @@ _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_
 // Agregar manualmente ToDO y notificar sectionToDos
 let myProjects = _projects__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
 myProjects[0].addToDo("aRandomTask")
-console.log(myProjects)
-console.log(myProjects[0])
-console.log(myProjects[0].toDos[0].title)
 // projects.notifyObservers(sectionToDos, "notifyListToDos", myProjects[0])
-
-
-
-
-
-
 })();
 
 /******/ })()

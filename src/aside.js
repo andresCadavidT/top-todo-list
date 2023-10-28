@@ -19,6 +19,7 @@ const aside = {
             btnRemoveProject.addEventListener("click", ()=>{
                 projects.removeProject(theProject)
                 projects.notifyObservers(aside, "notifyNewProject")
+                projects.notifyObservers(sectionToDos, "clearSection")
             })
 
             let boxAnAsideProject = document.createElement("div")

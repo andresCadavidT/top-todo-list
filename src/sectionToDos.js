@@ -24,6 +24,14 @@ const sectionToDos = {
             aProject.addToDo(prompt("NameTask"))
             projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
         })
+
+        let btnClearCheckedToDos = document.createElement("button")
+        btnClearCheckedToDos.textContent = "Clear done task"
+        btnClearCheckedToDos.className = "btnClearCheckedToDos"
+        btnClearCheckedToDos.addEventListener("click", function(){
+            console.log("clearToDosDone")
+        })
+
         let myToDos = aProject.getToDos()
         myToDos.forEach((aToDo)=>{
             let checkBox = document.createElement("input")
@@ -61,11 +69,19 @@ const sectionToDos = {
         })
 
         boxMainToDo.appendChild(boxProjectName)
-        boxMainToDo.appendChild(boxToDosList)
-        boxMainToDo.appendChild(buttonNewToDo)
+        const boxButtons = document.createElement("div")
+        boxButtons.className = "boxButtons"
+        boxButtons.appendChild(buttonNewToDo)
+        boxButtons.appendChild(btnClearCheckedToDos)
 
+        boxMainToDo.appendChild(boxButtons)
+        boxMainToDo.appendChild(boxToDosList)
+        
         $sectionToDos.appendChild(boxMainToDo)
     },
+    clearSection: function(){
+        if($sectionToDos.firstChild){$sectionToDos.firstChild.remove()}
+    }
 }
 
 projects.addObserver(sectionToDos)

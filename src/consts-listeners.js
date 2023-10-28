@@ -17,17 +17,28 @@ const $cerrarDialog = document.querySelector('.cancel');
         $dialogCreateProject.close();
     });
 
+
+
+const $nameNewProject = document.querySelector("#inputNameNewProject")
+
 const $acceptProject = document.querySelector(".create")
+
 $acceptProject.addEventListener("click", function(event){
-    const $nameNewProject = document.querySelector("#inputNameNewProject")
     projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
     $nameNewProject.value = ""
     projects.notifyObservers(aside, "notifyNewProject")
 })
 
-
-
+$nameNewProject.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        event.preventDefault()
+        projects.createProject($nameNewProject.value)
+        $dialogCreateProject.close();
+        $nameNewProject.value = ""
+        projects.notifyObservers(aside, "notifyNewProject")
+    }
+})
 
 const $imgAvatar = document.querySelector("#avatar")
 

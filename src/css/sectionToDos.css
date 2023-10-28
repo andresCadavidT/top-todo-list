@@ -1,10 +1,11 @@
 .boxMainToDo{
     width: 250px;
-    height: 400px;
+    height: clamp(300px 350px 600px);
     margin: 0 auto;
     margin-top: 30px;
     background-color: var(--main-color);
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -20,20 +21,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-overflow: clip;    
+    text-overflow: clip; 
+    font-size: 1.1rem;
+    font-weight: 600;   
 }
 
 .boxToDosList{
     width: 200px;
-    height: 300px;
     border-radius: 20px;
     background-color: white;
     display: flex;
+    min-height: clamp(100px, 200px, 400px);
     flex-direction: column;
     align-items: center;
     padding: 15px;
     gap: 10px;
-    overflow:hidden
+    margin-bottom: 20px;
 }
 
 .boxMyToDo{
@@ -46,6 +49,10 @@
     color:rgb(0, 0, 0);
     opacity: 0.3;
     text-decoration: line-through
+}
+
+.checkBox{
+    cursor: pointer;
 }
 
 .checkBox:checked{
@@ -68,6 +75,14 @@
     overflow: hidden   ;
 }
 
+
+/* buttons  */
+
+.boxButtons{
+    display: flex;
+    gap: 10px;
+}
+
 .buttonNewToDo{
     background-color: white;
     color: var(--main-color);
@@ -75,7 +90,25 @@
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    height: 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
+.btnClearCheckedToDos{
+    background-color: white;
+    color: var(--main-color);
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    height: 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
 

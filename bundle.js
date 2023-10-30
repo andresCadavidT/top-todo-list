@@ -290,7 +290,20 @@ select{
     width: 120px;
     margin-left: 10px;
 }
-`, "",{"version":3,"sources":["webpack://./src/css/dialogNewToDo.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,yBAAyB;AAC7B;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,YAAY;IACZ,yCAAyC;IACzC,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,yBAAyB;IACzB,yBAAyB;IACzB,YAAY;IACZ,gCAAgC;IAChC,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,oBAAoB;AACxB;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,YAAY;IACZ,yBAAyB;IACzB,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,iBAAiB;IACjB,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;;AAGA;IACI,YAAY;IACZ,iBAAiB;AACrB","sourcesContent":["*{\n    padding: 0px;\n    margin: 0px;\n}\n\n#dialogNewTodo{\n    margin: 0 auto;\n    margin-top: 200px;\n    border: 1px solid white;\n    border-radius: 10px;\n}\n\n#dialogNewTodo::backdrop{\n    opacity: 0.8;\n    background-color: #3d0c11;\n}\n\n.formNewToDo{\n    width: 250px;\n    height: 300px;\n    border-radius: 10px;\n    border: 1px solid black;\n    margin: 20px;\n    box-shadow: 0px 0px 2px 1px #3d0c11 inset;\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\n.addNewToDo{\n    font-size: 1.5rem;\n    padding: 5px;\n    background-color: #3d0c11;\n    border: 1px solid #3D0C11;\n    color: white;\n    border-radius: 10px 10px 0px 0px;\n    margin-bottom: 20px;\n}\n\nlabel{\n    font-size: 0.8rem;\n    margin-left: 10px;\n    color: #3d0c11;\n}\n\n#inputDescriptionNewToDo{\n    height: 60px;\n}\n\n.boxBtns{\n    display: flex;\n    align-self: flex-end;\n}\n\n.createToDo{\n    margin: 10px;\n    padding: 5px 10px;\n    color: white;\n    background-color: #3D0C11;\n    font-size: 0.8rem;\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n}\n\n.cancelToDo{\n    margin: 10px;\n    padding: 5px 10px;\n    font-size: 0.8rem;\n    border: 1px solid black;\n    background-color: white;\n    border-radius: 10px;\n    cursor: pointer;\n}\n\n\nselect{\n    width: 120px;\n    margin-left: 10px;\n}\n"],"sourceRoot":""}]);
+
+
+.btnEditToDo{
+    margin: 10px;
+    padding: 5px 10px;
+    color: white;
+    background-color: #3D0C11;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+`, "",{"version":3,"sources":["webpack://./src/css/dialogNewToDo.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,WAAW;AACf;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,yBAAyB;AAC7B;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,YAAY;IACZ,yCAAyC;IACzC,aAAa;IACb,sBAAsB;IACtB,SAAS;AACb;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,yBAAyB;IACzB,yBAAyB;IACzB,YAAY;IACZ,gCAAgC;IAChC,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,aAAa;IACb,oBAAoB;AACxB;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,YAAY;IACZ,yBAAyB;IACzB,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,iBAAiB;IACjB,iBAAiB;IACjB,uBAAuB;IACvB,uBAAuB;IACvB,mBAAmB;IACnB,eAAe;AACnB;;;AAGA;IACI,YAAY;IACZ,iBAAiB;AACrB;;;AAGA;IACI,YAAY;IACZ,iBAAiB;IACjB,YAAY;IACZ,yBAAyB;IACzB,iBAAiB;IACjB,YAAY;IACZ,mBAAmB;IACnB,eAAe;AACnB","sourcesContent":["*{\n    padding: 0px;\n    margin: 0px;\n}\n\n#dialogNewTodo{\n    margin: 0 auto;\n    margin-top: 200px;\n    border: 1px solid white;\n    border-radius: 10px;\n}\n\n#dialogNewTodo::backdrop{\n    opacity: 0.8;\n    background-color: #3d0c11;\n}\n\n.formNewToDo{\n    width: 250px;\n    height: 300px;\n    border-radius: 10px;\n    border: 1px solid black;\n    margin: 20px;\n    box-shadow: 0px 0px 2px 1px #3d0c11 inset;\n    display: flex;\n    flex-direction: column;\n    gap: 10px;\n}\n\n.addNewToDo{\n    font-size: 1.5rem;\n    padding: 5px;\n    background-color: #3d0c11;\n    border: 1px solid #3D0C11;\n    color: white;\n    border-radius: 10px 10px 0px 0px;\n    margin-bottom: 20px;\n}\n\nlabel{\n    font-size: 0.8rem;\n    margin-left: 10px;\n    color: #3d0c11;\n}\n\n#inputDescriptionNewToDo{\n    height: 60px;\n}\n\n.boxBtns{\n    display: flex;\n    align-self: flex-end;\n}\n\n.createToDo{\n    margin: 10px;\n    padding: 5px 10px;\n    color: white;\n    background-color: #3D0C11;\n    font-size: 0.8rem;\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n}\n\n.cancelToDo{\n    margin: 10px;\n    padding: 5px 10px;\n    font-size: 0.8rem;\n    border: 1px solid black;\n    background-color: white;\n    border-radius: 10px;\n    cursor: pointer;\n}\n\n\nselect{\n    width: 120px;\n    margin-left: 10px;\n}\n\n\n.btnEditToDo{\n    margin: 10px;\n    padding: 5px 10px;\n    color: white;\n    background-color: #3D0C11;\n    font-size: 0.8rem;\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -478,7 +491,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden   ;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .boxPriority{
@@ -538,10 +552,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.boxMainToDo{
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
 
-`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,gCAAgC;IAChC,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,OAAO;IACP,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;IACnB,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sCAAsC;IACtC,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,8BAA8B;IAC9B,QAAQ;IACR,mBAAmB;AACvB;;;AAGA;IACI,kBAAkB;IAClB,YAAY;IACZ;AACJ;;AAEA;IACI,eAAe;AACnB;;AAEA;QACQ,YAAY;QACZ,aAAa;QACb,+BAA+B;AACvC;;;AAGA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,mBAAmB;AACvB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,oCAAoC;;AAExC;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,oCAAoC;AACxC;;;AAGA,aAAa;;AAEb;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;;AAEnB","sourcesContent":[".boxMainToDo{\n    width: 300px;\n    height: clamp(300px 350px 600px);\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 250px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip; \n    font-size: 1.1rem;\n    font-weight: 600;   \n}\n\n.boxToDosList{\n    width: 250px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    min-height: clamp(100px, 200px, 400px);\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n    margin-bottom: 20px;\n}\n\n.boxMyToDo {\n    display: flex;\n    width: 100%;\n    justify-content: space-between;\n    gap: 5px;\n    align-items: center;\n}\n\n\n.checked{\n    color:rgb(0, 0, 0);\n    opacity: 0.3;\n    text-decoration: line-through\n}\n\n.checkBox{\n    cursor: pointer;\n}\n\n.checkBox:checked{\n        border: none;\n        outline: none;\n        accent-color: var(--main-color);\n}\n\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden   ;\n}\n\n.boxPriority{\n    height: 10px;\n    width: 10px;\n    border-radius: 5px;\n}\n\n.pHigh{\n    background-color: rgb(255, 137, 137);\n}\n\n.pMedium{\n    background-color: rgb(255, 255, 130);\n    \n}\n\n.pLow{\n    background-color: rgb(118, 255, 118);\n}\n\n.pDone{\n    background-color: rgb(189, 188, 188);\n}\n\n\n/* buttons  */\n\n.boxButtons{\n    display: flex;\n    gap: 10px;\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n}\n\n.btnClearCheckedToDos{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 400;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n\n}\n\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/css/sectionToDos.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,gCAAgC;IAChC,cAAc;IACd,gBAAgB;IAChB,mCAAmC;IACnC,aAAa;IACb,OAAO;IACP,sBAAsB;IACtB,mBAAmB;IACnB,SAAS;AACb;;AAEA;IACI,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,wBAAwB;IACxB,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;IACnB,iBAAiB;IACjB,gBAAgB;AACpB;;AAEA;IACI,YAAY;IACZ,mBAAmB;IACnB,uBAAuB;IACvB,aAAa;IACb,sCAAsC;IACtC,sBAAsB;IACtB,mBAAmB;IACnB,aAAa;IACb,SAAS;IACT,mBAAmB;AACvB;;AAEA;IACI,aAAa;IACb,WAAW;IACX,8BAA8B;IAC9B,QAAQ;IACR,mBAAmB;AACvB;;;AAGA;IACI,kBAAkB;IAClB,YAAY;IACZ;AACJ;;AAEA;IACI,eAAe;AACnB;;AAEA;QACQ,YAAY;QACZ,aAAa;QACb,+BAA+B;AACvC;;;AAGA;IACI,YAAY;IACZ,cAAc;IACd,mCAAmC;IACnC,kBAAkB;IAClB,wBAAwB;IACxB,iBAAiB;IACjB,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,gBAAgB;IAChB,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,kBAAkB;AACtB;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,oCAAoC;;AAExC;;AAEA;IACI,oCAAoC;AACxC;;AAEA;IACI,oCAAoC;AACxC;;;AAGA,aAAa;;AAEb;IACI,aAAa;IACb,SAAS;AACb;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,uBAAuB;IACvB,wBAAwB;IACxB,gBAAgB;IAChB,iBAAiB;IACjB,kBAAkB;IAClB,uBAAuB;IACvB,mBAAmB;IACnB,cAAc;IACd,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB","sourcesContent":[".boxMainToDo{\n    width: 300px;\n    height: clamp(300px 350px 600px);\n    margin: 0 auto;\n    margin-top: 30px;\n    background-color: var(--main-color);\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    align-items: center;\n    gap: 20px;\n}\n\n.boxProjectName{\n    margin-top: 20px;\n    height: 30px;\n    width: 250px;\n    border-radius: 20px;\n    background-color: white;\n    color: var(--main-color);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    text-overflow: clip; \n    font-size: 1.1rem;\n    font-weight: 600;   \n}\n\n.boxToDosList{\n    width: 250px;\n    border-radius: 20px;\n    background-color: white;\n    display: flex;\n    min-height: clamp(100px, 200px, 400px);\n    flex-direction: column;\n    align-items: center;\n    padding: 15px;\n    gap: 10px;\n    margin-bottom: 20px;\n}\n\n.boxMyToDo {\n    display: flex;\n    width: 100%;\n    justify-content: space-between;\n    gap: 5px;\n    align-items: center;\n}\n\n\n.checked{\n    color:rgb(0, 0, 0);\n    opacity: 0.3;\n    text-decoration: line-through\n}\n\n.checkBox{\n    cursor: pointer;\n}\n\n.checkBox:checked{\n        border: none;\n        outline: none;\n        accent-color: var(--main-color);\n}\n\n\n.pName{\n    width: 160px;\n    height: 1.5rem;\n    border: 1px solid var(--main-color);\n    border-radius: 5px;\n    color: var(--main-color);\n    padding: 5px 10px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden;\n    cursor: pointer;\n}\n\n.boxPriority{\n    height: 10px;\n    width: 10px;\n    border-radius: 5px;\n}\n\n.pHigh{\n    background-color: rgb(255, 137, 137);\n}\n\n.pMedium{\n    background-color: rgb(255, 255, 130);\n    \n}\n\n.pLow{\n    background-color: rgb(118, 255, 118);\n}\n\n.pDone{\n    background-color: rgb(189, 188, 188);\n}\n\n\n/* buttons  */\n\n.boxButtons{\n    display: flex;\n    gap: 10px;\n}\n\n.buttonNewToDo{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 700;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n}\n\n.btnClearCheckedToDos{\n    background-color: white;\n    color: var(--main-color);\n    font-weight: 400;\n    padding: 5px 10px;\n    border-radius: 5px;\n    border: 1px solid white;\n    margin-bottom: 10px;\n    height: 1.3rem;\n    display: flex;\n    align-items: center;\n    cursor: pointer;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1343,6 +1356,13 @@ const $asideProjectList = document.querySelector("#asideProjectList")
 
 const $sectionToDos = document.querySelector("#sectionToDos")
 
+const $cancelToDo = document.querySelector(".cancelToDo")
+$cancelToDo.addEventListener("click", function(){
+    const dialogToDo = document.querySelector("#dialogNewTodo")
+    dialogToDo.close()
+})
+
+
 
 
 /***/ }),
@@ -1434,6 +1454,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const $dialogNewTodo = document.querySelector("#dialogNewTodo")
+const $boxCreateToDo = document.querySelector(".boxCreateToDo")
+const $inputNameNewToDo = document.querySelector("#inputNameNewToDo")
+const $inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToDo")
+const $inputPriority = document.querySelector(".inputPriority")
+
+
+
+
 const sectionToDos = {
     notifySectionToDos: function(aProject){
         while(_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild){_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild.remove()}
@@ -1453,26 +1483,27 @@ const sectionToDos = {
         buttonNewToDo.className = "buttonNewToDo"
         buttonNewToDo.textContent = "+ New ToDo"
         buttonNewToDo.addEventListener("click",function(){
-            const $dialogNewTodo = document.querySelector("#dialogNewTodo")
-            $dialogNewTodo.showModal()
 
-            const boxCreateToDo = document.querySelector(".boxCreateToDo")
-            while(boxCreateToDo.firstChild){boxCreateToDo.firstChild.remove()}
+            // BOTON NEW TO DO
+            $dialogNewTodo.showModal()
+            $inputNameNewToDo.value = ""
+            $inputDescriptionNewToDo.value = ""
+            $inputPriority.value = ""
+
+            while($boxCreateToDo.firstChild){$boxCreateToDo.firstChild.remove()}
 
             const createToDo = document.createElement("button")
             createToDo.className = "createToDo"
             createToDo.textContent = "Create To Do"
-            boxCreateToDo.appendChild(createToDo)
+            $boxCreateToDo.appendChild(createToDo)
 
             createToDo.addEventListener("click", function(event){
                 event.preventDefault()
-                const inputNameNewToDo = document.querySelector("#inputNameNewToDo")
-                const inputPriority = document.querySelector(".inputPriority")
                 const inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToDo")
 
-                aProject.addToDo(inputNameNewToDo.value, false, inputPriority.value, inputDescriptionNewToDo.value)
-                inputNameNewToDo.value = ""
-                inputPriority.value = ""
+                aProject.addToDo($inputNameNewToDo.value, false, $inputPriority.value, inputDescriptionNewToDo.value)
+                $inputNameNewToDo.value = ""
+                $inputPriority.value = ""
                 inputDescriptionNewToDo.value = ""
                 $dialogNewTodo.close()
                 _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
@@ -1480,6 +1511,7 @@ const sectionToDos = {
         })
 
         const myToDos = aProject.getToDos()
+
         const btnClearCheckedToDos = document.createElement("button")
         btnClearCheckedToDos.textContent = "Clear done task"
         btnClearCheckedToDos.className = "btnClearCheckedToDos"
@@ -1495,6 +1527,10 @@ const sectionToDos = {
         myToDos.forEach((aToDo)=>{
             const boxPriority = document.createElement("div")
             boxPriority.className = "boxPriority"
+
+            if(aToDo.checked == true){boxPriority.classList.add("pDone")}
+            if(aToDo.checked == false){boxPriority.classList.remove("pDone")}
+
             if(aToDo.priority == "high"){
                 boxPriority.classList.add("pHigh")
                 boxPriority.classList.remove("pMedium")
@@ -1521,6 +1557,33 @@ const sectionToDos = {
             pName.textContent = aToDo.title
             if(aToDo.checked == true){pName.classList.add("checked")}
             if(aToDo.checked == false){pName.classList.remove("checked")}
+            pName.addEventListener("click", function(){
+                $dialogNewTodo.showModal()
+                while($boxCreateToDo.firstChild){$boxCreateToDo.firstChild.remove()}
+                const btnEditToDo = document.createElement("button")
+                btnEditToDo.className = "btnEditToDo"
+                btnEditToDo.textContent = "Edit To Do"
+                $boxCreateToDo.appendChild(btnEditToDo)
+
+                // llama los valores actuales 
+                $inputNameNewToDo.value = aToDo.title
+                $inputDescriptionNewToDo.value = aToDo.description
+                $inputPriority.value = aToDo.priority
+
+                btnEditToDo.addEventListener("click", function(){
+                    // los cambia por los nuevos
+                    aToDo.title = $inputNameNewToDo.value
+                    aToDo.description = $inputDescriptionNewToDo.value
+                    aToDo.priority = $inputPriority.value
+
+                    _projects__WEBPACK_IMPORTED_MODULE_1__.projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
+                    $dialogNewTodo.close()
+                    // limpia los cambios del form
+                    $inputNameNewToDo.value = ""
+                    $inputDescriptionNewToDo.value = ""
+                    $inputPriority.value = ""
+                })
+            })
 
             const boxMyToDo = document.createElement("div")
             boxMyToDo.className = "boxMyToDo"
@@ -1726,7 +1789,7 @@ _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_
 
 // Agregar manualmente ToDO y notificar sectionToDos
 let myProjects = _projects__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
-myProjects[0].addToDo("aRandomTask", false, "high")
+myProjects[0].addToDo("aRandomTask", false, "high", "Random Description")
 // projects.notifyObservers(sectionToDos, "notifyListToDos", myProjects[0])
 })();
 

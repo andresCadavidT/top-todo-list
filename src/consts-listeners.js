@@ -44,4 +44,11 @@ const $asideProjectList = document.querySelector("#asideProjectList")
 
 const $sectionToDos = document.querySelector("#sectionToDos")
 
+const $cancelToDo = document.querySelector(".cancelToDo")
+$cancelToDo.addEventListener("click", function(){
+    const dialogToDo = document.querySelector("#dialogNewTodo")
+    dialogToDo.close()
+})
+
+
 export { $imgAvatar, $asideProjectList, $sectionToDos }

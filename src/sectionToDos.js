@@ -2,6 +2,16 @@ import { $sectionToDos } from "./consts-listeners"
 import { projects } from "./projects"
 import "./css/sectionToDos.css"
 
+
+const $dialogNewTodo = document.querySelector("#dialogNewTodo")
+const $boxCreateToDo = document.querySelector(".boxCreateToDo")
+const $inputNameNewToDo = document.querySelector("#inputNameNewToDo")
+const $inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToDo")
+const $inputPriority = document.querySelector(".inputPriority")
+
+
+
+
 const sectionToDos = {
     notifySectionToDos: function(aProject){
         while($sectionToDos.firstChild){$sectionToDos.firstChild.remove()}
@@ -21,26 +31,27 @@ const sectionToDos = {
         buttonNewToDo.className = "buttonNewToDo"
         buttonNewToDo.textContent = "+ New ToDo"
         buttonNewToDo.addEventListener("click",function(){
-            const $dialogNewTodo = document.querySelector("#dialogNewTodo")
-            $dialogNewTodo.showModal()
 
-            const boxCreateToDo = document.querySelector(".boxCreateToDo")
-            while(boxCreateToDo.firstChild){boxCreateToDo.firstChild.remove()}
+            // BOTON NEW TO DO
+            $dialogNewTodo.showModal()
+            $inputNameNewToDo.value = ""
+            $inputDescriptionNewToDo.value = ""
+            $inputPriority.value = ""
+
+            while($boxCreateToDo.firstChild){$boxCreateToDo.firstChild.remove()}
 
             const createToDo = document.createElement("button")
             createToDo.className = "createToDo"
             createToDo.textContent = "Create To Do"
-            boxCreateToDo.appendChild(createToDo)
+            $boxCreateToDo.appendChild(createToDo)
 
             createToDo.addEventListener("click", function(event){
                 event.preventDefault()
-                const inputNameNewToDo = document.querySelector("#inputNameNewToDo")
-                const inputPriority = document.querySelector(".inputPriority")
                 const inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToDo")
 
-                aProject.addToDo(inputNameNewToDo.value, false, inputPriority.value, inputDescriptionNewToDo.value)
-                inputNameNewToDo.value = ""
-                inputPriority.value = ""
+                aProject.addToDo($inputNameNewToDo.value, false, $inputPriority.value, inputDescriptionNewToDo.value)
+                $inputNameNewToDo.value = ""
+                $inputPriority.value = ""
                 inputDescriptionNewToDo.value = ""
                 $dialogNewTodo.close()
                 projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
@@ -48,6 +59,7 @@ const sectionToDos = {
         })
 
         const myToDos = aProject.getToDos()
+
         const btnClearCheckedToDos = document.createElement("button")
         btnClearCheckedToDos.textContent = "Clear done task"
         btnClearCheckedToDos.className = "btnClearCheckedToDos"
@@ -63,6 +75,10 @@ const sectionToDos = {
         myToDos.forEach((aToDo)=>{
             const boxPriority = document.createElement("div")
             boxPriority.className = "boxPriority"
+
+            if(aToDo.checked == true){boxPriority.classList.add("pDone")}
+            if(aToDo.checked == false){boxPriority.classList.remove("pDone")}
+
             if(aToDo.priority == "high"){
                 boxPriority.classList.add("pHigh")
                 boxPriority.classList.remove("pMedium")
@@ -89,6 +105,33 @@ const sectionToDos = {
             pName.textContent = aToDo.title
             if(aToDo.checked == true){pName.classList.add("checked")}
             if(aToDo.checked == false){pName.classList.remove("checked")}
+            pName.addEventListener("click", function(){
+                $dialogNewTodo.showModal()
+                while($boxCreateToDo.firstChild){$boxCreateToDo.firstChild.remove()}
+                const btnEditToDo = document.createElement("button")
+                btnEditToDo.className = "btnEditToDo"
+                btnEditToDo.textContent = "Edit To Do"
+                $boxCreateToDo.appendChild(btnEditToDo)
+
+                // llama los valores actuales 
+                $inputNameNewToDo.value = aToDo.title
+                $inputDescriptionNewToDo.value = aToDo.description
+                $inputPriority.value = aToDo.priority
+
+                btnEditToDo.addEventListener("click", function(){
+                    // los cambia por los nuevos
+                    aToDo.title = $inputNameNewToDo.value
+                    aToDo.description = $inputDescriptionNewToDo.value
+                    aToDo.priority = $inputPriority.value
+
+                    projects.notifyObservers(sectionToDos, "notifySectionToDos", aProject)
+                    $dialogNewTodo.close()
+                    // limpia los cambios del form
+                    $inputNameNewToDo.value = ""
+                    $inputDescriptionNewToDo.value = ""
+                    $inputPriority.value = ""
+                })
+            })
 
             const boxMyToDo = document.createElement("div")
             boxMyToDo.className = "boxMyToDo"

@@ -75,7 +75,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden   ;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .boxPriority{
@@ -135,6 +136,5 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
 

@@ -1,5 +1,5 @@
 .boxMainToDo{
-    width: 300px;
+    width: 400px;
     height: clamp(300px 350px 600px);
     margin: 0 auto;
     margin-top: 30px;
@@ -14,8 +14,8 @@
 .boxProjectName{
     margin-top: 20px;
     height: 30px;
-    width: 250px;
-    border-radius: 20px;
+    width: 80%;
+    border-radius: 10px;
     background-color: white;
     color: var(--main-color);
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 .boxToDosList{
-    width: 250px;
+    width: 80%;
     border-radius: 20px;
     background-color: white;
     display: flex;
@@ -66,7 +66,7 @@
 
 
 .pName{
-    width: 160px;
+    width: 80%;
     height: 1.5rem;
     border: 1px solid var(--main-color);
     border-radius: 5px;
@@ -138,3 +138,16 @@
     cursor: pointer;
 }
 
+
+.boxDate{
+    width: 30%;
+    height: 2.2rem;
+    border: 1px var(--main-color) solid;
+    border-radius: 5px;
+    padding: 2px 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--main-color);
+}

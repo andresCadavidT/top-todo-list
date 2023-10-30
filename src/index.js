@@ -20,5 +20,5 @@ projects.notifyObservers(aside, "notifyNewProject")
 
 // Agregar manualmente ToDO y notificar sectionToDos
 let myProjects = projects.getMyProjects()
-myProjects[0].addToDo("aRandomTask", false, "high", "Random Description")
+myProjects[0].addToDo("aRandomTask", false, "high", "Random Description", "2023-10-28")
 // projects.notifyObservers(sectionToDos, "notifyListToDos", myProjects[0])

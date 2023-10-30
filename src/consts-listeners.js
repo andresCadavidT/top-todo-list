@@ -17,8 +17,6 @@ const $cerrarDialog = document.querySelector('.cancel');
         $dialogCreateProject.close();
     });
 
-
-
 const $nameNewProject = document.querySelector("#inputNameNewProject")
 
 const $acceptProject = document.querySelector(".create")

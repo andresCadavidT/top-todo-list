@@ -40,5 +40,35 @@
     <section id="sectionToDos">
 
     </section>
+    <dialog id="dialogNewTodo">
+        <div class="formNewToDo">
+            <div class="addNewToDo">Add New To Do</div>
+            <label>
+                Title:*
+                <input id="inputNameNewToDo" type="text" class="inputNameNewToDo" required placeholder="some title here" autocomplete="off">
+            </label>
+            <label>
+                Due Date:
+                <input id="inputDueDateNewToDo" type="date" class="inputDueDateNewToDo">
+            </label>
+            <label>
+                Description:
+                <textarea id="inputDescriptionNewToDo" class="inputDescriptionNewToDo" autocomplete="off"></textarea>
+            </label>
+            
+            <select class="inputPriority">
+                <option value="">Pick a priority:</option>
+                <option value="high" >High</option>
+                <option value="medium" >Medium</option>
+                <option value="low" >Low</option>
+            </select>
+            <div class="boxBtns">
+                <button class="cancelToDo">Cancel</button>
+                <div class="boxCreateToDo">
+                    
+                </div>
+            </div>
+        </div>
+</dialog>
 </body>
 </html>

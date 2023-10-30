@@ -43,8 +43,3 @@ projects.addObserver(aside)
 export { aside }
 
 
-
-    // let myProjects = projects.getMyProjects()
-    // myProjects.forEach((theProject)=>{
-    //     theProject.name
-    // })

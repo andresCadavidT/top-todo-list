@@ -1,5 +1,5 @@
 .boxMainToDo{
-    width: 250px;
+    width: 300px;
     height: clamp(300px 350px 600px);
     margin: 0 auto;
     margin-top: 30px;
@@ -14,7 +14,7 @@
 .boxProjectName{
     margin-top: 20px;
     height: 30px;
-    width: 200px;
+    width: 250px;
     border-radius: 20px;
     background-color: white;
     color: var(--main-color);
@@ -27,7 +27,7 @@
 }
 
 .boxToDosList{
-    width: 200px;
+    width: 250px;
     border-radius: 20px;
     background-color: white;
     display: flex;
@@ -39,11 +39,14 @@
     margin-bottom: 20px;
 }
 
-.boxMyToDo{
+.boxMyToDo {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     gap: 5px;
-
+    align-items: center;
 }
+
 
 .checked{
     color:rgb(0, 0, 0);
@@ -73,6 +76,29 @@
     align-items: center;
     justify-content: center;
     overflow: hidden   ;
+}
+
+.boxPriority{
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+}
+
+.pHigh{
+    background-color: rgb(255, 137, 137);
+}
+
+.pMedium{
+    background-color: rgb(255, 255, 130);
+    
+}
+
+.pLow{
+    background-color: rgb(118, 255, 118);
+}
+
+.pDone{
+    background-color: rgb(189, 188, 188);
 }
 
 

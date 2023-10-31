@@ -1,6 +1,5 @@
 import { projects } from "./projects";
 import "./consts-listeners"
-import "./$insert"
 import {aside} from "./aside"
 import { sectionToDos } from "./sectionToDos"
 // css
@@ -8,8 +7,6 @@ import "./css/dialogCreateProject.css"
 import "./css/index.css"
 import  "./css/sectionToDos.css"
 import "./css/dialogNewToDo.css"
-
-
 
 
 projects.createProject("myFirstTestProject")
@@ -20,5 +17,5 @@ projects.notifyObservers(aside, "notifyNewProject")
 
 // Agregar manualmente ToDO y notificar sectionToDos
 let myProjects = projects.getMyProjects()
-myProjects[0].addToDo("aRandomTask", false, "high", "Random Description", "2023-10-28")
+myProjects[0].addToDo("aRandomTask", false, "high", "Random Description")
 // projects.notifyObservers(sectionToDos, "notifyListToDos", myProjects[0])

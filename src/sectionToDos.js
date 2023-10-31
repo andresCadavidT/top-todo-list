@@ -11,8 +11,6 @@ const $inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToD
 const $inputPriority = document.querySelector(".inputPriority")
 const $inputDueDateNewToDo = document.querySelector("#inputDueDateNewToDo")
 
-
-
 const sectionToDos = {
     notifySectionToDos: function(aProject){
         while($sectionToDos.firstChild){$sectionToDos.firstChild.remove()}
@@ -82,8 +80,8 @@ const sectionToDos = {
             const boxPriority = document.createElement("div")
             boxPriority.className = "boxPriority"
 
-            if(aToDo.checked == true){boxPriority.classList.add("pDone")}
-            if(aToDo.checked == false){boxPriority.classList.remove("pDone")}
+            if(aToDo.checked == true) boxPriority.classList.add("pDone")
+            if(aToDo.checked == false) boxPriority.classList.remove("pDone")
 
             if(aToDo.priority == "high"){
                 boxPriority.classList.add("pHigh")

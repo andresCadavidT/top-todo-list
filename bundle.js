@@ -2415,22 +2415,6 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/$insert.js":
-/*!************************!*\
-  !*** ./src/$insert.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/avatar.jpg */ "./src/img/avatar.jpg");
-/* harmony import */ var _consts_listeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./consts-listeners */ "./src/consts-listeners.js");
-
-
-
-_consts_listeners__WEBPACK_IMPORTED_MODULE_1__.$imgAvatar.src = _img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__
-
-/***/ }),
-
 /***/ "./src/aside.js":
 /*!**********************!*\
   !*** ./src/aside.js ***!
@@ -2503,34 +2487,36 @@ _projects__WEBPACK_IMPORTED_MODULE_1__.projects.addObserver(aside)
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   $asideProjectList: () => (/* binding */ $asideProjectList),
-/* harmony export */   $imgAvatar: () => (/* binding */ $imgAvatar),
 /* harmony export */   $sectionToDos: () => (/* binding */ $sectionToDos)
 /* harmony export */ });
 /* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects */ "./src/projects.js");
 /* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
+/* harmony import */ var _img_avatar_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/avatar.jpg */ "./src/img/avatar.jpg");
 
 
+
+
+const $imgAvatar = document.querySelector("#avatar")
+$imgAvatar.src = _img_avatar_jpg__WEBPACK_IMPORTED_MODULE_2__
 
 const $dialogCreateProject = document.querySelector('#dialog');
+
 const $btnCreateProject = document.createElement("button")
-    $btnCreateProject.textContent = "+ New Project"
-    $btnCreateProject.classList.add("btnCreateProject")
-    $btnCreateProject.addEventListener("click", function(){
-        $dialogCreateProject.showModal()
-    })
+$btnCreateProject.textContent = "+ New Project"
+$btnCreateProject.classList.add("btnCreateProject")
+$btnCreateProject.addEventListener("click", function(){
+    $dialogCreateProject.showModal()
+})
 
 const $divCreateProject = document.querySelector("#divCreateProject")
-    $divCreateProject.appendChild($btnCreateProject)
+$divCreateProject.appendChild($btnCreateProject)
 
 const $cerrarDialog = document.querySelector('.cancel');
-    $cerrarDialog.addEventListener('click', () => {
-        $dialogCreateProject.close();
-    });
-
-const $nameNewProject = document.querySelector("#inputNameNewProject")
+$cerrarDialog.addEventListener('click', () => {
+    $dialogCreateProject.close();
+});
 
 const $acceptProject = document.querySelector(".create")
-
 $acceptProject.addEventListener("click", function(event){
     _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject($nameNewProject.value)
     $dialogCreateProject.close();
@@ -2538,6 +2524,7 @@ $acceptProject.addEventListener("click", function(event){
     _projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_1__.aside, "notifyNewProject")
 })
 
+const $nameNewProject = document.querySelector("#inputNameNewProject")
 $nameNewProject.addEventListener("keydown", function(event){
     if(event.key == "Enter"){
         event.preventDefault()
@@ -2548,10 +2535,7 @@ $nameNewProject.addEventListener("keydown", function(event){
     }
 })
 
-const $imgAvatar = document.querySelector("#avatar")
-
 const $asideProjectList = document.querySelector("#asideProjectList")
-
 const $sectionToDos = document.querySelector("#sectionToDos")
 
 const $cancelToDo = document.querySelector(".cancelToDo")
@@ -2662,8 +2646,6 @@ const $inputDescriptionNewToDo = document.querySelector("#inputDescriptionNewToD
 const $inputPriority = document.querySelector(".inputPriority")
 const $inputDueDateNewToDo = document.querySelector("#inputDueDateNewToDo")
 
-
-
 const sectionToDos = {
     notifySectionToDos: function(aProject){
         while(_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild){_consts_listeners__WEBPACK_IMPORTED_MODULE_0__.$sectionToDos.firstChild.remove()}
@@ -2733,8 +2715,8 @@ const sectionToDos = {
             const boxPriority = document.createElement("div")
             boxPriority.className = "boxPriority"
 
-            if(aToDo.checked == true){boxPriority.classList.add("pDone")}
-            if(aToDo.checked == false){boxPriority.classList.remove("pDone")}
+            if(aToDo.checked == true) boxPriority.classList.add("pDone")
+            if(aToDo.checked == false) boxPriority.classList.remove("pDone")
 
             if(aToDo.priority == "high"){
                 boxPriority.classList.add("pHigh")
@@ -3012,14 +2994,12 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects */ "./src/projects.js");
 /* harmony import */ var _consts_listeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./consts-listeners */ "./src/consts-listeners.js");
-/* harmony import */ var _$insert__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./$insert */ "./src/$insert.js");
-/* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
-/* harmony import */ var _sectionToDos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sectionToDos */ "./src/sectionToDos.js");
-/* harmony import */ var _css_dialogCreateProject_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/dialogCreateProject.css */ "./src/css/dialogCreateProject.css");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
-/* harmony import */ var _css_sectionToDos_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./css/sectionToDos.css */ "./src/css/sectionToDos.css");
-/* harmony import */ var _css_dialogNewToDo_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./css/dialogNewToDo.css */ "./src/css/dialogNewToDo.css");
-
+/* harmony import */ var _aside__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./aside */ "./src/aside.js");
+/* harmony import */ var _sectionToDos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sectionToDos */ "./src/sectionToDos.js");
+/* harmony import */ var _css_dialogCreateProject_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./css/dialogCreateProject.css */ "./src/css/dialogCreateProject.css");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_sectionToDos_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/sectionToDos.css */ "./src/css/sectionToDos.css");
+/* harmony import */ var _css_dialogNewToDo_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./css/dialogNewToDo.css */ "./src/css/dialogNewToDo.css");
 
 
 
@@ -3031,17 +3011,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject("myFirstTestProject")
-_projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_3__.aside, "notifyNewProject")
+_projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_2__.aside, "notifyNewProject")
 _projects__WEBPACK_IMPORTED_MODULE_0__.projects.createProject("AnotherProject")
-_projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_3__.aside, "notifyNewProject")
+_projects__WEBPACK_IMPORTED_MODULE_0__.projects.notifyObservers(_aside__WEBPACK_IMPORTED_MODULE_2__.aside, "notifyNewProject")
 
 
 // Agregar manualmente ToDO y notificar sectionToDos
 let myProjects = _projects__WEBPACK_IMPORTED_MODULE_0__.projects.getMyProjects()
-myProjects[0].addToDo("aRandomTask", false, "high", "Random Description", "2023-10-28")
+myProjects[0].addToDo("aRandomTask", false, "high", "Random Description")
 // projects.notifyObservers(sectionToDos, "notifyListToDos", myProjects[0])
 })();
 
